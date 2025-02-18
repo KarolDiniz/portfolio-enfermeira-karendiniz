@@ -203,14 +203,6 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
-// Google recaptcha
-window.onload = function() { 
-    var el = document.getElementById('g-recaptcha-response'); 
-    if (el) { 
-      el.setAttribute('required', 'required'); 
-    } 
-  }
-
 // validate all field in the contact form
 document.getElementById("check").onclick = function() {
     let allAreFilled = true;
@@ -220,5 +212,8 @@ document.getElementById("check").onclick = function() {
     })
     if (!allAreFilled) {
       alert('Fill all the fields');
+    } else {
+      // If all fields are filled, submit the form
+      document.getElementById("submit_form").submit();
     }
   };
